@@ -1,0 +1,3 @@
+displayName = Textiles & Co.
+author = Kawaggy
+version = 0.0.1

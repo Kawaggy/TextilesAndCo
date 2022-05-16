@@ -2,6 +2,7 @@
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using TextilesAndCo.Core;
 
 namespace TextilesAndCo.Content.Items.Robe
 {
@@ -41,7 +42,7 @@ namespace TextilesAndCo.Content.Items.Robe
         public override void AddRecipes()
         {
             CreateRecipe(ResultCount)
-                .AddIngredient(ModContent.ItemType<WhiteRobe>(), ResultCount)
+                .AddIngredient(RobeID.White, ResultCount)
                 .AddIngredient(dyeItem)
                 .AddTile(TileID.DyeVat)
                 .Register();

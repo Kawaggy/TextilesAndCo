@@ -9,8 +9,17 @@ namespace TextilesAndCo
 {
 	public class TextilesAndCo : Mod
 	{
+        public static TextilesAndCo Instance;
+
         public override void Load()
         {
+            Instance = this;
+
+            AddContent(new WhiteSilk(null));
+            AddContent(new WhiteThread(null));
+            AddContent(new WhiteYarn(null));
+            AddContent(new WhiteRobe(null));
+
             AddItemSet(ItemID.RedDye, "Red");
             AddItemSet(ItemID.OrangeDye, "Orange");
             AddItemSet(ItemID.YellowDye, "Yellow");
@@ -25,6 +34,11 @@ namespace TextilesAndCo
             AddItemSet(ItemID.PinkDye, "Pink");
             AddItemSet(ItemID.BlackDye, "Black");
             AddItemSet(ItemID.BrownDye, "Brown");
+        }
+
+        public override void Unload()
+        {
+            Instance = null;
         }
 
         internal void AddItemSet(int dyeType, string dyeName)

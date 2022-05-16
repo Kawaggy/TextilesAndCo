@@ -7,6 +7,11 @@ namespace TextilesAndCo.Content.Items.Yarn
 {
     public class WhiteYarn : ModItem
     {
+        public WhiteYarn(object _)
+        {
+
+        }
+
         public override void SetStaticDefaults()
         {
             CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 75;

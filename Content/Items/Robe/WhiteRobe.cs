@@ -8,6 +8,11 @@ namespace TextilesAndCo.Content.Items.Robe
 {
     public class WhiteRobe : ModItem
     {
+        public WhiteRobe(object _)
+        {
+
+        }
+
         public override void SetStaticDefaults()
         {
             CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;

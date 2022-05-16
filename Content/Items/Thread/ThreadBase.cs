@@ -2,6 +2,7 @@
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using TextilesAndCo.Core;
 
 namespace TextilesAndCo.Content.Items.Thread
 {
@@ -40,7 +41,7 @@ namespace TextilesAndCo.Content.Items.Thread
         public override void AddRecipes()
         {
             CreateRecipe(ResultCount)
-                .AddIngredient(ModContent.ItemType<WhiteThread>(), ResultCount)
+                .AddIngredient(ThreadID.White, ResultCount)
                 .AddIngredient(dyeItem)
                 .AddTile(TileID.DyeVat)
                 .Register();

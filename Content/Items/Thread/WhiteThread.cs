@@ -7,6 +7,11 @@ namespace TextilesAndCo.Content.Items.Thread
 {
     public class WhiteThread : ModItem
     {
+        public WhiteThread(object _)
+        {
+
+        }
+
         public override void SetStaticDefaults()
         {
             CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 100;

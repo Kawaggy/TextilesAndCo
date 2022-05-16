@@ -7,6 +7,11 @@ namespace TextilesAndCo.Content.Items.Silk
 {
     public class WhiteSilk : ModItem
     {
+        public WhiteSilk(object _)
+        {
+
+        }
+
         public override void SetStaticDefaults()
         {
             CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 25;

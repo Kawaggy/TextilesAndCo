@@ -2,6 +2,7 @@
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using TextilesAndCo.Core;
 
 namespace TextilesAndCo.Content.Items.Yarn
 {
@@ -40,7 +41,7 @@ namespace TextilesAndCo.Content.Items.Yarn
         public override void AddRecipes()
         {
             CreateRecipe(ResultCount)
-                .AddIngredient(ModContent.ItemType<WhiteYarn>(), ResultCount)
+                .AddIngredient(YarnID.White, ResultCount)
                 .AddIngredient(dyeItem)
                 .AddTile(TileID.DyeVat)
                 .Register();

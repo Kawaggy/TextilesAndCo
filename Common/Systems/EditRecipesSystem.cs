@@ -15,21 +15,21 @@ namespace TextilesAndCo.Common.Systems
 
                 if (recipe.TryGetIngredient(ItemID.PinkThread, out Item pink))
                 {
-                    int stack = pink.Clone().stack * 6;
+                    int stack = pink.Clone().stack;
                     pink.SetDefaults(ThreadID.Pink);
                     pink.stack = stack;
                 }
 
                 if (recipe.TryGetIngredient(ItemID.BlackThread, out Item black))
                 {
-                    int stack = black.Clone().stack * 6;
+                    int stack = black.Clone().stack;
                     black.SetDefaults(ThreadID.Black);
                     black.stack = stack;
                 }
 
                 if (recipe.TryGetIngredient(ItemID.GreenThread, out Item green))
                 {
-                    int stack = green.Clone().stack * 6;
+                    int stack = green.Clone().stack;
                     green.SetDefaults(ThreadID.Green);
                     green.stack = stack;
                 }

@@ -1,10 +1,10 @@
 ﻿using Terraria.ModLoader;
 
-namespace TextilesAndCo.Core
+namespace TextilesAndCo.Core.IDs
 {
-    public class YarnID
+    public class PlasticID
     {
-        public const string type = "Yarn";
+        private const string type = "Plastic";
 
         private static int _black = -1;
         public static int Black

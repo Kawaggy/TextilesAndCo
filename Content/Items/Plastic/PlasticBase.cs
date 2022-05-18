@@ -4,17 +4,17 @@ using Terraria.ID;
 using Terraria.ModLoader;
 using TextilesAndCo.Core.IDs;
 
-namespace TextilesAndCo.Content.Items.Thread
+namespace TextilesAndCo.Content.Items.Plastic
 {
-    public class ThreadBase : ModItem
+    public class PlasticBase : ModItem
     {
-        public const int ResultCount = 30;
+        public const int ResultCount = 10;
 
         private readonly int dyeItem;
         private readonly string internalName;
         private readonly string texture;
 
-        public ThreadBase(int dyeItem, string internalName, string texture)
+        public PlasticBase(int dyeItem, string internalName, string texture)
         {
             this.dyeItem = dyeItem;
             this.internalName = internalName;
@@ -27,21 +27,21 @@ namespace TextilesAndCo.Content.Items.Thread
 
         public override void SetStaticDefaults()
         {
-            CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 100;
+            CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 50;
         }
 
         public override void SetDefaults()
         {
-            Item.maxStack = 1998;
-            Item.width = 28;
-            Item.height = 20;
+            Item.maxStack = 999;
+            Item.width = 26;
+            Item.height = 28;
             Item.value = Item.sellPrice(silver: 10);
         }
 
         public override void AddRecipes()
         {
             CreateRecipe(ResultCount)
-                .AddIngredient(ThreadID.White, ResultCount)
+                .AddIngredient(PlasticID.White, ResultCount)
                 .AddIngredient(dyeItem)
                 .AddTile(TileID.DyeVat)
                 .Register();

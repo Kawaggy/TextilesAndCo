@@ -1,5 +1,6 @@
 using Terraria.ID;
 using Terraria.ModLoader;
+using TextilesAndCo.Content.Items.Plastic;
 using TextilesAndCo.Content.Items.Robe;
 using TextilesAndCo.Content.Items.Silk;
 using TextilesAndCo.Content.Items.Thread;
@@ -11,6 +12,9 @@ namespace TextilesAndCo
 	{
         public static TextilesAndCo Instance;
 
+
+        //TODO: Add different types of the Giant Bows of the slimes
+        //TODO: Add ribbons
         public override void Load()
         {
             Instance = this;
@@ -19,6 +23,7 @@ namespace TextilesAndCo
             AddContent(new WhiteThread(null));
             AddContent(new WhiteYarn(null));
             AddContent(new WhiteRobe(null));
+            AddContent(new WhitePlastic(null));
 
             AddItemSet(ItemID.RedDye, "Red");
             AddItemSet(ItemID.OrangeDye, "Orange");
@@ -34,6 +39,9 @@ namespace TextilesAndCo
             AddItemSet(ItemID.PinkDye, "Pink");
             AddItemSet(ItemID.BlackDye, "Black");
             AddItemSet(ItemID.BrownDye, "Brown");
+            //AddItemSet(ItemID.RainbowDye, "Rainbow");
+            //ExpertItems
+            //MasterItems
         }
 
         public override void Unload()
@@ -46,7 +54,8 @@ namespace TextilesAndCo
             AddContent(new SilkBase(dyeType, dyeName + "Silk", "TextilesAndCo/Content/Items/Silk/" + dyeName + "Silk"));
             AddContent(new ThreadBase(dyeType, dyeName + "Thread", "TextilesAndCo/Content/Items/Thread/" + dyeName + "Thread"));
             AddContent(new YarnBase(dyeType, dyeName + "Yarn", "TextilesAndCo/Content/Items/Yarn/" + dyeName + "Yarn"));
-            AddContent(new RobeBase(dyeType, Find<ModItem>(dyeName + "Silk").Type, dyeName + "Robe", "TextilesAndCo/Content/Items/Robe/" + dyeName + "Robe"));
+            AddContent(new PlasticBase(dyeType, dyeName + "Plastic", "TextilesAndCo/Content/Items/Plastic/" + dyeName + "Plastic"));
+            AddContent(new RobeBase(dyeType, Find<ModItem>(dyeName + "Silk").Type, Find<ModItem>(dyeName + "Thread").Type, Find<ModItem>(dyeName + "Plastic").Type, dyeName + "Robe", "TextilesAndCo/Content/Items/Robe/" + dyeName + "Robe"));
         }
     }
 }

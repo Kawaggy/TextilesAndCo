@@ -2,27 +2,26 @@
 using Terraria.GameContent.Creative;
 using Terraria.ID;
 using Terraria.ModLoader;
-using TextilesAndCo.Content.Items.Silk;
-using TextilesAndCo.Core.IDs;
 
-namespace TextilesAndCo.Content.Items.Robe
+
+namespace TextilesAndCo.Content.Items.Plastic
 {
-    public class WhiteRobe : ModItem
+    public class WhitePlastic : ModItem
     {
-        public WhiteRobe(object _)
+        public WhitePlastic(object _)
         {
 
         }
 
         public override void SetStaticDefaults()
         {
-            CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
+            CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 25;
         }
 
         public override void SetDefaults()
         {
-            Item.maxStack = 1;
-            Item.width = 30;
+            Item.maxStack = 999;
+            Item.width = 26;
             Item.height = 28;
             Item.value = Item.buyPrice(silver: 1);
         }
@@ -30,9 +29,8 @@ namespace TextilesAndCo.Content.Items.Robe
         public override void AddRecipes()
         {
             CreateRecipe()
-                .AddIngredient(SilkID.White, 7)
-                .AddIngredient(ThreadID.White, 20)
-                .AddTile(TileID.Loom)
+                .AddIngredient(ItemID.Acorn, 5)
+                .AddTile(TileID.Solidifier)
                 .Register();
         }
     }

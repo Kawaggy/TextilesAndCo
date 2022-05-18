@@ -2,7 +2,7 @@
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
-using TextilesAndCo.Core;
+using TextilesAndCo.Core.IDs;
 
 namespace TextilesAndCo.Content.Items.Silk
 {

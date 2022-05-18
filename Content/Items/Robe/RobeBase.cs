@@ -2,7 +2,7 @@
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
-using TextilesAndCo.Core;
+using TextilesAndCo.Core.IDs;
 
 namespace TextilesAndCo.Content.Items.Robe
 {
@@ -11,14 +11,18 @@ namespace TextilesAndCo.Content.Items.Robe
         public const int ResultCount = 1;
 
         private readonly int dyeItem;
-        private readonly int alternativeSilk;
+        private readonly int dyeSilk;
+        private readonly int dyeThread;
+        private readonly int dyePlastic;
         private readonly string internalName;
         private readonly string texture;
        
-        public RobeBase(int dyeItem, int alternativeSilk, string internalName, string texture)
+        public RobeBase(int dyeItem, int dyeSilk, int dyeThread, int dyePlastic, string internalName, string texture)
         {
             this.dyeItem = dyeItem;
-            this.alternativeSilk = alternativeSilk;
+            this.dyeSilk = dyeSilk;
+            this.dyeThread = dyeThread;
+            this.dyePlastic = dyePlastic;
             this.internalName = internalName;
             this.texture = texture;
         }
@@ -47,8 +51,9 @@ namespace TextilesAndCo.Content.Items.Robe
                 .AddTile(TileID.DyeVat)
                 .Register();
 
-            CreateRecipe(1)
-                .AddIngredient(alternativeSilk, 7)
+            CreateRecipe(ResultCount)
+                .AddIngredient(dyeSilk, 7)
+                .AddIngredient(dyeThread, 20)
                 .AddTile(TileID.Loom)
                 .Register();
         }

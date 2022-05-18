@@ -1,10 +1,10 @@
 ﻿using Terraria.ModLoader;
 
-namespace TextilesAndCo.Core
+namespace TextilesAndCo.Core.IDs
 {
-    public class SilkID
+    public class ThreadID
     {
-        private const string type = "Silk";
+        private const string type = "Thread";
 
         private static int _black = -1;
         public static int Black

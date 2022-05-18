@@ -1,6 +1,6 @@
 ﻿using Terraria.ModLoader;
 
-namespace TextilesAndCo.Core
+namespace TextilesAndCo.Core.IDs
 {
     public class RobeID
     {

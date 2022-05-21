@@ -12,55 +12,56 @@ namespace TextilesAndCo.Common.Systems
             for (int i = 0; i < Recipe.numRecipes; i++)
             {
                 Recipe recipe = Main.recipe[i];
+                Item recipeItem;
 
-                if (recipe.TryGetIngredient(ItemID.PinkThread, out Item pink))
+                if (recipe.TryGetIngredient(ItemID.PinkThread, out recipeItem))
                 {
-                    int stack = pink.Clone().stack;
-                    pink.SetDefaults(ThreadID.Pink);
-                    pink.stack = stack;
+                    int stack = recipeItem.Clone().stack;
+                    recipeItem.SetDefaults(ThreadID.Pink);
+                    recipeItem.stack = stack;
                 }
 
-                if (recipe.TryGetIngredient(ItemID.BlackThread, out Item black))
+                if (recipe.TryGetIngredient(ItemID.BlackThread, out recipeItem))
                 {
-                    int stack = black.Clone().stack;
-                    black.SetDefaults(ThreadID.Black);
-                    black.stack = stack;
+                    int stack = recipeItem.Clone().stack;
+                    recipeItem.SetDefaults(ThreadID.Black);
+                    recipeItem.stack = stack;
                 }
 
-                if (recipe.TryGetIngredient(ItemID.GreenThread, out Item green))
+                if (recipe.TryGetIngredient(ItemID.GreenThread, out recipeItem))
                 {
-                    int stack = green.Clone().stack;
-                    green.SetDefaults(ThreadID.Green);
-                    green.stack = stack;
+                    int stack = recipeItem.Clone().stack;
+                    recipeItem.SetDefaults(ThreadID.Green);
+                    recipeItem.stack = stack;
                 }
 
                 if (recipe.TryGetResult(ItemID.GreenThread, out _))
                 {
-                    recipe.RemoveRecipe();
+                    recipe.DisableRecipe();
                 }
 
-                if (recipe.TryGetIngredient(ItemID.Robe, out Item robe))
+                if (recipe.TryGetIngredient(ItemID.Robe, out recipeItem))
                 {
-                    int stack = robe.Clone().stack;
-                    robe.SetDefaults(RobeID.White);
-                    robe.stack = stack;
+                    int stack = recipeItem.Clone().stack;
+                    recipeItem.SetDefaults(RobeID.White);
+                    recipeItem.stack = stack;
                 }
 
-                if (recipe.TryGetIngredient(ItemID.Silk, out Item silk))
+                if (recipe.TryGetIngredient(ItemID.Silk, out recipeItem))
                 {
-                    int stack = silk.Clone().stack;
-                    silk.SetDefaults(SilkID.White);
-                    silk.stack = stack;
+                    int stack = recipeItem.Clone().stack;
+                    recipeItem.SetDefaults(SilkID.White);
+                    recipeItem.stack = stack;
                 }
 
                 if (recipe.TryGetResult(ItemID.Silk, out _))
                 {
-                    recipe.RemoveRecipe();
+                    recipe.DisableRecipe();
                 }
 
                 if (recipe.TryGetResult(ItemID.Robe, out _))
                 {
-                    recipe.RemoveRecipe();
+                    recipe.DisableRecipe();
                 }
             }
 

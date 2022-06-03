@@ -10,9 +10,31 @@ namespace TextilesAndCo.Content.Items.Silk
     {
         public const int ResultCount = 7;
 
-        private readonly int dyeItem;
-        private readonly string internalName;
-        private readonly string texture;
+        private int dyeItem;
+        private string internalName;
+        private string texture;
+
+        protected override bool CloneNewInstances => true;
+
+        public override ModItem NewInstance(Item entity)
+        {
+            SilkBase instance = (SilkBase)base.NewInstance(entity);
+            instance.dyeItem = dyeItem;
+            instance.internalName = internalName;
+            instance.texture = texture;
+
+            return instance;
+        }
+
+        public override ModItem Clone(Item newEntity)
+        {
+            SilkBase clone = (SilkBase)base.Clone(newEntity);
+            clone.dyeItem = dyeItem;
+            clone.internalName = internalName;
+            clone.texture = texture;
+
+            return clone;
+        }
 
         public SilkBase(int dyeItem, string internalName, string texture)
         {

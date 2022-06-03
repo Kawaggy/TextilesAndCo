@@ -7,6 +7,18 @@ namespace TextilesAndCo.Content.Items.Thread
 {
     public class WhiteThread : ModItem
     {
+        protected override bool CloneNewInstances => true;
+
+        public override ModItem NewInstance(Item entity)
+        {
+            return base.NewInstance(entity);
+        }
+
+        public override ModItem Clone(Item newEntity)
+        {
+            return base.Clone(newEntity);
+        }
+
         public WhiteThread(object _)
         {
 

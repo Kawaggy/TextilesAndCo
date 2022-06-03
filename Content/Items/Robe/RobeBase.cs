@@ -10,13 +10,41 @@ namespace TextilesAndCo.Content.Items.Robe
     {
         public const int ResultCount = 1;
 
-        private readonly int dyeItem;
-        private readonly int dyeSilk;
-        private readonly int dyeThread;
-        private readonly int dyePlastic;
-        private readonly string internalName;
-        private readonly string texture;
-       
+        private int dyeItem;
+        private int dyeSilk;
+        private int dyeThread;
+        private int dyePlastic;
+        private string internalName;
+        private string texture;
+
+        protected override bool CloneNewInstances => true;
+
+        public override ModItem NewInstance(Item entity)
+        {
+            RobeBase instance = (RobeBase)base.NewInstance(entity);
+            instance.dyeItem = dyeItem;
+            instance.dyeSilk = dyeSilk;
+            instance.dyeThread = dyeThread;
+            instance.dyePlastic = dyePlastic;
+            instance.internalName = internalName;
+            instance.texture = texture;
+
+            return instance;
+        }
+
+        public override ModItem Clone(Item newEntity)
+        {
+            RobeBase clone = (RobeBase)base.Clone(newEntity);
+            clone.dyeItem = dyeItem;
+            clone.dyeSilk = dyeSilk;
+            clone.dyeThread = dyeThread;
+            clone.dyePlastic = dyePlastic;
+            clone.internalName = internalName;
+            clone.texture = texture;
+
+            return clone;
+        }
+
         public RobeBase(int dyeItem, int dyeSilk, int dyeThread, int dyePlastic, string internalName, string texture)
         {
             this.dyeItem = dyeItem;

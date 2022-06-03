@@ -7,6 +7,18 @@ namespace TextilesAndCo.Content.Items.Yarn
 {
     public class WhiteYarn : ModItem
     {
+        protected override bool CloneNewInstances => true;
+
+        public override ModItem NewInstance(Item entity)
+        {
+            return base.NewInstance(entity);
+        }
+
+        public override ModItem Clone(Item newEntity)
+        {
+            return base.Clone(newEntity);
+        }
+
         public WhiteYarn(object _)
         {
 

@@ -10,9 +10,31 @@ namespace TextilesAndCo.Content.Items.Thread
     {
         public const int ResultCount = 30;
 
-        private readonly int dyeItem;
-        private readonly string internalName;
-        private readonly string texture;
+        private int dyeItem;
+        private string internalName;
+        private string texture;
+
+        protected override bool CloneNewInstances => true;
+
+        public override ModItem NewInstance(Item entity)
+        {
+            ThreadBase instance = (ThreadBase)base.NewInstance(entity);
+            instance.dyeItem = dyeItem;
+            instance.internalName = internalName;
+            instance.texture = texture;
+
+            return instance;
+        }
+
+        public override ModItem Clone(Item newEntity)
+        {
+            ThreadBase clone = (ThreadBase)base.Clone(newEntity);
+            clone.dyeItem = dyeItem;
+            clone.internalName = internalName;
+            clone.texture = texture;
+
+            return clone;
+        }
 
         public ThreadBase(int dyeItem, string internalName, string texture)
         {

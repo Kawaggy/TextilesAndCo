@@ -10,9 +10,30 @@ namespace TextilesAndCo.Content.Items.Plastic
     {
         public const int ResultCount = 10;
 
-        private readonly int dyeItem;
-        private readonly string internalName;
-        private readonly string texture;
+        private int dyeItem;
+        private string internalName;
+        private string texture;
+
+        protected override bool CloneNewInstances => true;
+
+        public override ModItem NewInstance(Item entity)
+        {
+            PlasticBase instance = (PlasticBase)base.NewInstance(entity);
+            instance.dyeItem = dyeItem;
+            instance.internalName = internalName;
+            instance.texture = texture;
+            return instance;
+        }
+
+        public override ModItem Clone(Item newEntity)
+        {
+            PlasticBase clone = (PlasticBase)base.Clone(newEntity);
+            clone.dyeItem = dyeItem;
+            clone.internalName = internalName;
+            clone.texture = texture;
+
+            return clone;
+        }
 
         public PlasticBase(int dyeItem, string internalName, string texture)
         {

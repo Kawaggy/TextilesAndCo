@@ -10,9 +10,31 @@ namespace TextilesAndCo.Content.Items.Yarn
     {
         public const int ResultCount = 30;
 
-        private readonly int dyeItem;
-        private readonly string internalName;
-        private readonly string texture;
+        private int dyeItem;
+        private string internalName;
+        private string texture;
+
+        protected override bool CloneNewInstances => true;
+
+        public override ModItem NewInstance(Item entity)
+        {
+            YarnBase instance = (YarnBase)base.NewInstance(entity);
+            instance.dyeItem = dyeItem;
+            instance.internalName = internalName;
+            instance.texture = texture;
+
+            return instance;
+        }
+
+        public override ModItem Clone(Item newEntity)
+        {
+            YarnBase clone = (YarnBase)base.Clone(newEntity);
+            clone.dyeItem = dyeItem;
+            clone.internalName = internalName;
+            clone.texture = texture;
+
+            return clone;
+        }
 
         public YarnBase(int dyeItem, string internalName, string texture)
         {
